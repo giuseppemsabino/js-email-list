@@ -1,6 +1,6 @@
 
 const emailList = document.getElementById("user-emails")
-let email;
+
 
 
 for(let i = 0; i < 10; i++){
@@ -9,8 +9,13 @@ for(let i = 0; i < 10; i++){
     .then ((data) => {
     
        
-        email = data.response
-        console.log(email)
+        const email = data.response
+        
+        const itemList = document.createElement("li");
+
+        itemList.textContent = email;
+
+        emailList.appendChild(itemList);
     
     });
 }
